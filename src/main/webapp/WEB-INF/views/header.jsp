@@ -37,7 +37,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.jsp"><i
+			<a class="navbar-brand" href="index"><i
 				class="fas fa-seedling" style="font-size: 35px;"></i><span>Smart</span>Irrigation</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"

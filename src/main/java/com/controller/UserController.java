@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +14,10 @@ import com.bean.CustomerBean;
 import com.dao.UserDao;
 
 @Controller
-public class UserController {
+public class UserController implements ErrorController{
 	@Autowired
 	UserDao dao;
-
+	private static final String PATH = "/error";
 	private Boolean userAuth = false;
 	
 	@GetMapping(value = { "/" })
@@ -24,20 +25,16 @@ public class UserController {
 		System.out.println("dao = " + dao);
 		return "index";
 	}
+	
+	@GetMapping(value = { "/index" })
+	public String get() {
+		System.out.println("dao = " + dao);
+		return "index";
+	}
 
 	@GetMapping(value = { "/login" })
 	public String getlogin() {
 		return "login";
-	}
-
-	@PostMapping(value = { "/error" })
-	public String getErrorByPost() {
-		return "404";
-	}
-
-	@GetMapping(value = { "/error" })
-	public String getErrorByGet() {
-		return "404";
 	}
 
 	@GetMapping(value = { "/signup" })
@@ -120,4 +117,15 @@ public class UserController {
 			return "login";
 		}
 	}
+
+	@Override
+	public String getErrorPath() 
+	{		
+		return "PATH";
+	}
+	
+	 @GetMapping(value = PATH)
+	 public String error() {
+	  return "404";
+	 }
 }
