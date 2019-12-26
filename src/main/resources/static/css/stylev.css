@@ -1,0 +1,89 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+:root{
+  --percent: -60%;
+}
+body{
+  width: 80%;
+  color: black;
+  font-size: 35px;
+  margin: 0 auto;
+  height: 100%;
+
+}
+.top{
+	margin-top:50px;
+}
+label{
+	margin-left: 100px;
+	text-align: center;
+}
+.meter p{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/*.wrapper{
+    background: #d3d3d3;
+}*/
+.monitor{
+  width: 100%;
+  height: auto;
+}
+.section{
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.droplet {
+  width: 100px;
+  height: 100px;
+  border-radius: 0 50% 50% 50%;
+  border: 3px solid #ccc;
+  transform: rotate(45deg);
+  margin-top: 2px;
+  margin-left: 2px;
+  background: #ccc;
+  overflow: hidden;
+}
+.wave{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #4973ff;
+  border-radius: 0 50% 50% 50%;
+  box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+}
+.wave:before,
+.wave:after{
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%,var(--percent));
+  background: #000;
+}
+.wave:before{
+  border-radius: 50%;
+  background: rgba(255,255,255,1);
+  animation: animate 10s linear infinite;
+}
+.wave:after{
+  border-radius: 40%;
+  background: rgba(255,255,255,0.5);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%{
+    transform: translate(-50%,var(--percent))rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,var(--percent))rotate(360deg);
+  }
+}
