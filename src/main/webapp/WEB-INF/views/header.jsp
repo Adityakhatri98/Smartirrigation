@@ -38,7 +38,7 @@
 		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index"><i
-				class="fas fa-seedling" style="font-size: 35px;"></i><span>Smart</span>Irrigation</a>
+				class="fas fa-seedling" style="font-size: 35px;"></i><span>Smart</span>Crop</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
