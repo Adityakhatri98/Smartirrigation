@@ -33,8 +33,6 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="js/report.js"></script>
-
-
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -76,7 +74,6 @@
 
 	<!-- -------------------- THIS IS THE configuration FILE FOR THE DATABASE------------------- -->
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
