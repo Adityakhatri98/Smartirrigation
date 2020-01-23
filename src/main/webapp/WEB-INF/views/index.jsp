@@ -72,7 +72,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							
-							<a href="#" class="services-wrap ftco-animate">
+							<div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
@@ -82,7 +82,7 @@
 								<h2>Services 1</h2>
 								<p>Even the all-powerful Pointing has no control about the
 									blind.</p>
-							</a> <a href="#" class="services-wrap ftco-animate">
+							</div> <div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
@@ -91,7 +91,7 @@
 								<h2>Services 2</h2>
 								<p>Even the all-powerful Pointing has no control about the
 									blind.</p>
-							</a> <a href="#" class="services-wrap ftco-animate">
+							</div> <div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
@@ -100,7 +100,7 @@
 								<h2>Service 3</h2>
 								<p>Even the all-powerful Pointing has no control about the
 									blind.</p>
-							</a> <a href="#" class="services-wrap ftco-animate">
+							</div> <div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
@@ -109,7 +109,7 @@
 								<h2>services 4</h2>
 								<p>Even the all-powerful Pointing has no control about the
 									blind.</p>
-							</a> <a name="About"></a>
+							</div> <a name="About"></a>
 						</div>
 					</div>
 				</div>

@@ -144,9 +144,9 @@
 					<%
 						} else {
 					%>
-					<li class="nav-item"><a href="updateUserData" class="nav-link">UpdateInfo</a></li>
-					<li class="nav-item"><a href="report" class="nav-link">Report</a></li>
 					<li class="nav-item"><a href="chart" class="nav-link">Monitor</a></li>
+					<li class="nav-item"><a href="report" class="nav-link">Logs</a></li>
+					<li class="nav-item"><a href="profile" class="nav-link">Profile</a></li>
 					<li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
 					<%
 						}

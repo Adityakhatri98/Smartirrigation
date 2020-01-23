@@ -21,10 +21,13 @@ public class UserController implements ErrorController{
 	
 	@GetMapping(value = { "/" })
 	public String getPage() {
-		System.out.println("dao = " + dao);
 		return "index";
 	}
 	
+	@GetMapping(value= {"/profile"})
+	public String getProfile() {
+		return "profile";
+	}
 	@GetMapping(value = { "/index" })
 	public String get() {
 		System.out.println("dao = " + dao);

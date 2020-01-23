@@ -7760,7 +7760,7 @@ h1, h2, h3, h4, h5,
       .services-wrap .icon span:last-child {
         opacity: 1; }
   .services-wrap:hover {
-    margin-left: -100px; }
+    margin-left: -10px; }
     .services-wrap:hover .icon span:first-child {
       opacity: 1;
       margin-left: 5px; }
