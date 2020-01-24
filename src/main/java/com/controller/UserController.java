@@ -68,12 +68,12 @@ public class UserController implements ErrorController{
 		}
 	}
 
-	@GetMapping(value = { "/chart" })
+	@GetMapping(value = { "/bar" })
 	public String getChart() 
 	{	
 		if(userAuth==true)
 		{
-			return "chart";
+			return "bar";
 		}
 		else {
 			return "login";
@@ -92,17 +92,7 @@ public class UserController implements ErrorController{
 		}
 	}
 
-	@GetMapping(value = { "/updateUserData" })
-	public String getUpdateUserData() {
-	
-		if(userAuth==true)
-		{
-			return "updateform";
-		}
-		else {
-			return "login";
-		}
-	}
+
 
 	@GetMapping(value = { "/logout" })
 	public String getLogout(HttpSession session, HttpServletRequest request) {

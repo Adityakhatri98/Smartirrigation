@@ -149,23 +149,8 @@
 
 		<div id="dropDownSelect1"></div>
 
-		<!--===============================================================================================-->
-		<script src="vendorl/jquery/jquery-3.2.1.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="vendorl/animsition/js/animsition.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="vendorl/bootstrap/js/popper.js"></script>
-		<script src="vendorl/bootstrap/js/bootstrap.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="vendorl/select2/select2.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="vendorl/daterangepicker/moment.min.js"></script>
-		<script src="vendorl/daterangepicker/daterangepicker.js"></script>
-		<!--===============================================================================================-->
-		<script src="vendorl/countdowntime/countdowntime.js"></script>
-		<!--===============================================================================================-->
-		<script src="jsl/main.js"></script>
 	</form>
+		<script src="js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

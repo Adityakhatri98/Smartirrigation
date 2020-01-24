@@ -135,8 +135,7 @@
 							class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 							<div class="block-18 text-center">
 								<div class="text">
-									<strong class="number" data-number="144">0</strong> <span>Farms(in
-										Millions)</span>
+									<strong class="number" data-number="144">0</strong> <span>Farms(Millions)</span>
 								</div>
 							</div>
 						</div>
@@ -144,7 +143,7 @@
 							class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 							<div class="block-18 text-center">
 								<div class="text">
-									<strong class="number" data-number="2">0</strong> <span>rice(rank)</span>
+									<strong class="number" data-number="2">0</strong> <span>Rice(Rank)</span>
 								</div>
 							</div>
 						</div>
@@ -152,7 +151,7 @@
 							class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 							<div class="block-18 text-center">
 								<div class="text">
-									<strong class="number" data-number="2">0</strong> <span>Wheat(rank)</span>
+									<strong class="number" data-number="2">0</strong> <span>Wheat(Rank)</span>
 								</div>
 							</div>
 						</div>
@@ -160,8 +159,8 @@
 							class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 							<div class="block-18 text-center">
 								<div class="text">
-									<strong class="number" data-number="5">0</strong> <span>agricultural
-										produce(rank)</span>
+									<strong class="number" data-number="5">0</strong> <span>Agricultural
+										Produce(Rank)</span>
 								</div>
 							</div>
 						</div>
@@ -170,9 +169,9 @@
 			</div>
 		</div>
 	</section>
-
+	<script src="js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
-
+	
 	<!-- loader -->
 	<div id="ftco-loader" class="show fullscreen">
 		<svg class="circular" width="48px" height="48px">

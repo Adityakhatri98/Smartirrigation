@@ -60,20 +60,7 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-	<!--===============================================================================================-->
-	<script src="vendor/jqueryt/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrapt/js/popper.js"></script>
-	<script src="vendor/bootstrapt/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2t/select2.min.js"></script>
-
-	<!-- -------------------- THIS IS THE configuration FILE FOR THE DATABASE------------------- -->
-	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+		<script src="js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>

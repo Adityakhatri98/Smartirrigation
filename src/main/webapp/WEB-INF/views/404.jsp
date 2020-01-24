@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<jsp:include page="header.jsp"></jsp:include>
 <html lang="en">
 
 <head>
@@ -9,18 +10,9 @@
 
 	<title>404</title>
 
-	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet"> 
 
-	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/404.css" />
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 
 </head>
 
@@ -39,3 +31,5 @@
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+	<script src="js/jquery.min.js"></script>
+<jsp:include page="footer.jsp"></jsp:include>

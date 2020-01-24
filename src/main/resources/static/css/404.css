@@ -54,7 +54,7 @@ body {
   color: #c9c9c9;
   font-size: 16px;
   font-weight: 400;
-  margin-top: 0px;
+  margin-top: 70px;
   margin-bottom: 15px;
 }
 
@@ -80,7 +80,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 {
-    height: 122px;
+    height: 70px;
     line-height: 122px;
   }
 
