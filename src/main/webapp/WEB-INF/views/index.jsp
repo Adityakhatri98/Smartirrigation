@@ -11,6 +11,8 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
 	rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="fontsl/iconic/css/material-design-iconic-font.min.css">
 
 <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
 <link rel="stylesheet" href="css/animate.css" />

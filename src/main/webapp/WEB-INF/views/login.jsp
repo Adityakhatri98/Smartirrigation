@@ -6,7 +6,6 @@
 <title>Login</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
 <link rel="icon" type="image/png" href="imagesl/icons/favicon.ico" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
@@ -47,7 +46,7 @@
 				<div class="wrap-login100">
 					<div class="login100-form validate-form">
 						<span class="login100-form-title p-b-26"> Welcome </span> <span
-							class="login100-form-title p-b-48"> <i class="fas fa-seedling" style="font-size:35px;"></i><span>Smart</span>Irrigation
+							class="login100-form-title p-b-48"> <i class="fas fa-seedling" style="font-size:30px;"></i><span>Smart</span>Irrigation
 						</span>
 
 						<div class="wrap-input100 validate-input"
@@ -85,7 +84,22 @@
 		<div id="dropDownSelect1"></div>
 
 	</form>
-		<script src="js/jquery.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/bootstrap/js/popper.js"></script>
+	<script src="vendorl/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/daterangepicker/moment.min.js"></script>
+	<script src="vendorl/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendorl/countdowntime/countdowntime.js"></script>
+	<script type="text/javascript" src="jsl/main.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
