@@ -44,11 +44,15 @@
 				</div></span>
 		</div>
 		<!-- 		<div class="cont"> -->
-		<!-- 			<b>Address</b><br> <span><textarea rows="5" cols="20" id="address" disabled>13 Virat Society,&#13;&#10;New Sharda Mandir Road,&#13;&#10;Paldi Ahmedabad,&#13;&#10;380007</textarea></span> <span class="sp"><a -->
-		<!-- 				href="#" class="btn">Edit</a></span> -->
+		<!-- 			<b>Address</b><br> <span><textarea rows="5" cols="20" -->
+		<%-- 					id="address" disabled style="resize: none"><%=temp.getAddress()%> --%>
+		<!-- 					</textarea></span><span class="sp"><div class="temp"> -->
+		<!-- 					<a href="#">Edit</a> -->
+		<!-- 				</div></span> -->
 		<!-- 		</div> -->
 		<div class="cont">
-			<b>Address</b><br> <span><%=temp.getAddress()%></span> <span
+			<b>Address</b><br> <span style="margin-right: 50px;"><%=temp.getAddress()%>
+				</span> <span
 				class="sp"><div class="temp">
 					<a href="#">Edit</a>
 				</div></span>
@@ -67,12 +71,12 @@
 				</div></span>
 		</div>
 		<div class="cont">
-			<b>Manual</b><br> <span><b>Mode</b></span> <span class="toogle"><label
+			<b>ManualMode</b><span class="toogle"><label
 				class="switch"> <input type="checkbox"><span
 					class="slider round"></span></label></span>
 		</div>
 		<div class="cont">
-			<b>Trouble</b><br> <span><b>shooting</b></span> <span
+			<b>Troubleshooting</b></span> <span
 				class="toogle"><label class="switch"> <input
 					type="checkbox"><span class="slider round"></span></label></span>
 		</div>
