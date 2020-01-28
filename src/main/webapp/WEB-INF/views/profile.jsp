@@ -1,6 +1,7 @@
 <%@page import="com.bean.CustomerBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +13,21 @@
 <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-
-<title>Document</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" />
+<title>Profile</title>
 <link rel="stylesheet" href="css/profile.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+<script
+	src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<script src="js/profile.js"></script>
+
 </head>
-<body>
+<body onload="show()">
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<%
@@ -26,61 +37,40 @@
 
 	<div class="main">
 		<div class="cont">
-			<b>Name</b><br> <span><%=temp.getName()%></span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
+			<b>Name</b><br> <span><%=temp.getName()%></span>
 		</div>
 		<div class="cont">
-			<b>Email</b><br> <span><%=temp.getEmail()%></span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
+			<b>Email</b><br> <span><%=temp.getEmail()%></span>
 		</div>
 		<div class="cont">
-			<b>Phone</b><br> <span><%=temp.getPhone()%></span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
-		</div>
-		<!-- 		<div class="cont"> -->
-		<!-- 			<b>Address</b><br> <span><textarea rows="5" cols="20" -->
-		<%-- 					id="address" disabled style="resize: none"><%=temp.getAddress()%> --%>
-		<!-- 					</textarea></span><span class="sp"><div class="temp"> -->
-		<!-- 					<a href="#">Edit</a> -->
-		<!-- 				</div></span> -->
-		<!-- 		</div> -->
-		<div class="cont">
-			<b>Address</b><br> <span style="margin-right: 50px;"><%=temp.getAddress()%>
-				</span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
-		</div>
-
-		<div class="cont">
-			<b>Password</b><br> <span><%=temp.getPwd()%></span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
+			<b>Phone</b><br> <span><%=temp.getPhone()%></span>
 		</div>
 		<div class="cont">
-			<b>Pincode</b><br> <span><%=temp.getPincode()%></span> <span
-				class="sp"><div class="temp">
-					<a href="#">Edit</a>
-				</div></span>
+			<b>Address</b><br> <span style="margin-right: 50px;"><%=temp.getAddress()%></span>
 		</div>
 		<div class="cont">
-			<b>ManualMode</b><span class="toogle"><label
-				class="switch"> <input type="checkbox"><span
+			<b>Password</b><br> <span><%=temp.getPwd()%></span>
+		</div>
+		<div class="cont">
+			<b>Pincode</b><br> <span><%=temp.getPincode()%></span>
+		</div>
+		<div class="cont">
+			<b>ManualMode</b><span class="toogle"><label class="switch">
+					<input type="checkbox" id="mode"><span
+					class="slider round"></span>
+			</label></span>
+		</div>
+		<div class="cont">
+			<b>Troubleshooting</b></span> <span class="toogle"><label
+				class="switch"> <input type="checkbox" id="trouble"><span
 					class="slider round"></span></label></span>
 		</div>
-		<div class="cont">
-			<b>Troubleshooting</b></span> <span
-				class="toogle"><label class="switch"> <input
-					type="checkbox"><span class="slider round"></span></label></span>
-		</div>
 	</div>
+	<c:set var="email" value="<%=temp.getEmail()%>"></c:set>
+	<center>
+		<a href="user/${email}"><button type="button"
+				class="btn btn-info btn-lg col-2">Info</button></a>
+	</center>
 	<%
 		} else {
 	%>

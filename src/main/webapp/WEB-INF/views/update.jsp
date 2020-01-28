@@ -9,48 +9,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="imagesl/icons/favicon.ico" />
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendorl/bootstrap/css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="../imagesl/icons/favicon.ico" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="fontsl/font-awesome-4.7.0/css/font-awesome.min.css">
+	href="../vendorl/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="fontsl/iconic/css/material-design-iconic-font.min.css">
+	href="../fontsl/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/animate/animate.css">
+	href="../fontsl/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/css-hamburgers/hamburgers.min.css">
+	href="../vendorl/animate/animate.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/animsition/css/animsition.min.css">
+	href="../vendorl/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/select2/select2.min.css">
+	href="../vendorl/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/daterangepicker/daterangepicker.css">
+	href="../vendorl/select2/select2.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="cssl/util.css">
-<link rel="stylesheet" type="text/css" href="cssl/main.css">
+<link rel="stylesheet" type="text/css"
+	href="../vendorl/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../cssl/util.css">
+<link rel="stylesheet" type="text/css" href="../cssl/main.css">
+<!--===============================================================================================-->
 <script type="text/javascript" src="jsl/main.js"></script>
-<style type="text/css">
-.error {
-	color: red;
-}
-</style>
+
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-
-	<s:form action="signup" method="post" modelAttribute="customerBean" id="check">
-
+	<s:form action="../update" method="post" modelAttribute="user">
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-login100">
@@ -61,60 +55,55 @@
 						</span>
 
 						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="name" />
-							<span class="focus-input100" data-placeholder="Name"></span>
+
+							<s:input class="input100 has-val" type="text" path="name"/><span
+								class="focus-input100" data-placeholder="Name"></span>
 						</div>
-						<s:errors path="name" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
+						<div class="inputdata">${firstNameError}</div>
+						<div class="wrap-input100 validate-input">
+							<s:input class="input100  has-val" type="text" path="phone"/> <span
+								class="focus-input100" data-placeholder="Phone No."></span>
+						</div>
+						<div class="inputdata">${phoneError}</div>
 
 						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="phone" />
-							<span class="focus-input100" data-placeholder="Phone No."></span>
+							<s:input class="input100  has-val" type="text" path="address"/> <span
+								class="focus-input100" data-placeholder="Address"></span>
 						</div>
-						<s:errors path="phone" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
+						<div class="inputdata">${addressError}</div>
 
 						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="address" />
-							<span class="focus-input100" data-placeholder="Address"></span>
-						</div>
-						<s:errors path="address" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
-
-						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="pincode" />
-							<span class="focus-input100" data-placeholder="Pincode"></span>
+							<s:input class="input100 has-val" type="text" path="pincode"/> <span
+								class="focus-input100" data-placeholder="Pincode"></span>
 						</div>
 
-						<s:errors path="pincode" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
+						<div class="inputdata">${pincodeError}</div>
 
 
 						<div class="wrap-input100 validate-input"
 							data-validate="Valid email is: a@b.c">
-							<s:input class="input100" type="text" path="email" />
-							<span class="focus-input100" data-placeholder="Email"></span>
+							<s:input class="input100 has-val" type="text" path="email" readonly="true" 
+							cssStyle="color:grey; font-weight:bold;"/> <span
+								class="focus-input100" data-placeholder="Email"></span>
 						</div>
 
-						<s:errors path="email" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
+						<div class="inputdata">${emailError}</div>
+
 
 						<div class="wrap-input100 validate-input"
 							data-validate="Enter password">
 							<span class="btn-show-pass"> <i class="zmdi zmdi-eye"></i>
-							</span>
-							<s:input class="input100" type="password" path="pwd" />
-							<span class="focus-input100" data-placeholder="Password"></span>
+							</span> <s:input class="input100 has-val" type="password" path="pwd"/><span
+								class="focus-input100" data-placeholder="Password"></span>
 						</div>
 
-						<s:errors path="pwd" cssClass="error"></s:errors>
-						<div class="inputdata"></div>
+						<div class="inputdata">${pwdError}</div>
 
 
 						<div class="container-login100-form-btn">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button type="submit" class="login100-form-btn" id="temp">Signup</button>
+								<button class="login100-form-btn">Submit</button>
 							</div>
 						</div>
 
@@ -131,21 +120,21 @@
 
 	</s:form>
 	<!--===============================================================================================-->
-	<script src="vendorl/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../vendorl/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/animsition/js/animsition.min.js"></script>
+	<script src="../vendorl/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/bootstrap/js/popper.js"></script>
-	<script src="vendorl/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../vendorl/bootstrap/js/popper.js"></script>
+	<script src="../vendorl/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/select2/select2.min.js"></script>
+	<script src="../vendorl/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/daterangepicker/moment.min.js"></script>
-	<script src="vendorl/daterangepicker/daterangepicker.js"></script>
+	<script src="../vendorl/daterangepicker/moment.min.js"></script>
+	<script src="../vendorl/daterangepicker/daterangepicker.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/countdowntime/countdowntime.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="jsl/main.js"></script>
+	<script src="../vendorl/countdowntime/countdowntime.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../jsl/main.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

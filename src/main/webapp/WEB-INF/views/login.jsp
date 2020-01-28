@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="imagesl/icons/favicon.ico" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
@@ -37,53 +39,65 @@
 <link rel="stylesheet" type="text/css" href="cssl/util.css">
 <link rel="stylesheet" type="text/css" href="cssl/main.css">
 <!--===============================================================================================-->
+<style type="text/css">
+.error {
+	color: red;
+	margin-top: 10px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form action="login" method="post">
-		
-			<div class="container-login100">
-				<div class="wrap-login100">
-					<div class="login100-form validate-form">
-						<span class="login100-form-title p-b-26"> Welcome </span> <span
-							class="login100-form-title p-b-48"> <i class="fas fa-seedling" style="font-size:30px;"></i><span>Smart</span>Irrigation
-						</span>
+	<s:form action="login" method="post" modelAttribute="customerBean">
 
-						<div class="wrap-input100 validate-input"
-							data-validate="Valid email is: a@b.c">
-							<input class="input100" type="text" name="email"> <span
-								class="focus-input100" data-placeholder="Email"></span>
-						</div>
-						
-						<div class="inputdata">
-						</div>
-						
-						<div class="wrap-input100 validate-input"
-							data-validate="Enter password">
-							<span class="btn-show-pass"> <i class="zmdi zmdi-eye"></i>
-							</span> <input class="input100" type="password" name="pwd"> <span
-								class="focus-input100" data-placeholder="Password"></span>
-						</div>
-						<div class="inputdata"></div>
-									
-						<div class="container-login100-form-btn">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn">Login</button>
-							</div>
-						</div>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form validate-form">
+					<span class="login100-form-title p-b-26"> Welcome </span> <span
+						class="login100-form-title p-b-48"> <i
+						class="fas fa-seedling" style="font-size: 30px;"></i><span>Smart</span>Irrigation
+					</span>
 
-						<div class="text-center p-t-115">
-							<span class="txt1"> Don't have an account? </span> <a
-								class="txt2" href="signup"> SignUp </a>
-						</div>
+					<div class="wrap-input100 validate-input"
+						data-validate="Valid email is: a@b.c">
+						<s:input class="input100" type="text" path="email"/> <span
+							class="focus-input100" data-placeholder="Email"></span>
 					</div>
+					<s:errors path="email" cssClass="error"></s:errors>
+					<%String error = (String)request.getAttribute("error");%>
+					<div class="inputdata"></div>
+
+				</div>
+
+				<div class="wrap-input100 validate-input"
+					data-validate="Enter password">
+					<span class="btn-show-pass"> <i class="zmdi zmdi-eye"></i>
+					</span> <s:input class="input100" type="password" path="pwd"/> <span
+						class="focus-input100" data-placeholder="Password"></span>
+				</div>
+				<s:errors path="pwd" cssClass="error"></s:errors>
+				
+				<div class="error"><%=error!= null ? error :""%></div>
+				<div class="inputdata"></div>
+
+				<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+						<div class="login100-form-bgbtn"></div>
+						<button class="login100-form-btn">Login</button>
+					</div>
+				</div>
+
+				<div class="text-center p-t-115">
+					<span class="txt1"> Don't have an account? </span> <a class="txt2"
+						href="signup"> SignUp </a>
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 		<div id="dropDownSelect1"></div>
 
-	</form>
+	</s:form>
 	<!--===============================================================================================-->
 	<script src="vendorl/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
