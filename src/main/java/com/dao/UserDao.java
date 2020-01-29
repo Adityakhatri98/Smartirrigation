@@ -34,7 +34,8 @@ public class UserDao {
 
 		public CustomerBean mapRow(ResultSet row, int rowNu) throws SQLException {
 			System.out.println("sucess");
-			customerBean.setEmail(row.getString("user_email"));
+			String email = row.getString("user_email").toLowerCase();
+			customerBean.setEmail(email);
 			customerBean.setPwd(row.getString("user_password"));
 			customerBean.setAddress(row.getString("user_address"));
 			customerBean.setName(row.getString("user_name"));
@@ -53,6 +54,7 @@ public class UserDao {
 		if (bean.isEmpty()) {
 			return false;
 		} else {
+			System.out.println("Dao : "+bean);
 			return true;
 		}
 	}

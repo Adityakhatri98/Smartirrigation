@@ -43,7 +43,7 @@ public class UserController implements ErrorController {
 
 	@GetMapping(value = { "/login" })
 	public String getlogin(Model model) {
-		model.addAttribute("customerBean", new CustomerBean());
+		model.addAttribute("customerBean",  new CustomerBean());
 		return "login";
 	}
 
@@ -57,14 +57,13 @@ public class UserController implements ErrorController {
 	public String getSignup(@ModelAttribute("customerBean") @Valid CustomerBean customerBean, BindingResult result,
 			Model model) {
 
-		model.addAttribute("customerBean", customerBean);
-
 		if (result.hasErrors()) {
 			return "signup";
 		} else {
 			int i = dao.insertUser(customerBean);
 			if (i > 0) {
-				return "login";
+				System.out.println("login");
+				return "redirect:login";
 			} else {
 				return "signup";
 			}
@@ -76,17 +75,16 @@ public class UserController implements ErrorController {
 			Model model, HttpSession session,HttpServletRequest  request) {
 		
 		Boolean check = dao.getUser(customerBean);
-		if (result.hasErrors()) {
-			userAuth = false;
-			request.setAttribute("error","Email or Password is incorrect !!");
-			return "login";
-		} else if (check) {			
+		if (check) {
 			session.setAttribute("user", customerBean);
-			System.out.println(customerBean);
 			userAuth = true;
 			return "index";
+		} else if (result.hasErrors()) {			
+			userAuth = false;
+			System.out.println(result);
+			request.setAttribute("error","Email or Password is incorrect !!");
+			return "login";
 		}
-		
 		else {
 			return "login";
 		}
@@ -130,7 +128,7 @@ public class UserController implements ErrorController {
 		if (userAuth == true) {
 			return "bar";
 		} else {
-			return "login";
+			return "redirect:login";
 		}
 	}
 
@@ -139,7 +137,7 @@ public class UserController implements ErrorController {
 		if (userAuth == true) {
 			return "report";
 		} else {
-			return "login";
+			return "redirect:login";
 		}
 	}
 
@@ -154,7 +152,7 @@ public class UserController implements ErrorController {
 			return "index";
 		} else {
 
-			return "login";
+			return "redirect:login";
 		}
 	}
 
