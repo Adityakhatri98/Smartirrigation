@@ -58,8 +58,7 @@ function gotData(data) {
 			}
 		}
 		function errData1(err) {
-			console.log('ERROR!');
-			console.log(err);
+			
 		}
 	}
 }

@@ -7,37 +7,37 @@
 <title>Login</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="imagesl/icons/favicon.ico" />
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/imagesl/icons/favicon.ico" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/bootstrap/css/bootstrap.min.css">
+	href="${pageContext.request.contextPath}/vendorl/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="fontsl/font-awesome-4.7.0/css/font-awesome.min.css">
+	href="${pageContext.request.contextPath}/fontsl/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="fontsl/iconic/css/material-design-iconic-font.min.css">
+	href="${pageContext.request.contextPath}/fontsl/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/animate/animate.css">
+	href="${pageContext.request.contextPath}/vendorl/animate/animate.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/css-hamburgers/hamburgers.min.css">
+	href="${pageContext.request.contextPath}/vendorl/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/animsition/css/animsition.min.css">
+	href="${pageContext.request.contextPath}/vendorl/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/select2/select2.min.css">
+	href="${pageContext.request.contextPath}/vendorl/select2/select2.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendorl/daterangepicker/daterangepicker.css">
+	href="${pageContext.request.contextPath}/vendorl/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="cssl/util.css">
-<link rel="stylesheet" type="text/css" href="cssl/main.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/cssl/util.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/cssl/main.css">
 <!--===============================================================================================-->
 <style type="text/css">
 .error {
@@ -99,21 +99,22 @@
 
 	</s:form>
 	<!--===============================================================================================-->
-	<script src="vendorl/jquery/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/animsition/js/animsition.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/bootstrap/js/popper.js"></script>
-	<script src="vendorl/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/bootstrap/js/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/select2/select2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/daterangepicker/moment.min.js"></script>
-	<script src="vendorl/daterangepicker/daterangepicker.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/daterangepicker/moment.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/daterangepicker/daterangepicker.js"></script>
 	<!--===============================================================================================-->
-	<script src="vendorl/countdowntime/countdowntime.js"></script>
-	<script type="text/javascript" src="jsl/main.js"></script>
-	<script src="js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/vendorl/countdowntime/countdowntime.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/jsl/main.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<jsp:include page="jsfragment.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

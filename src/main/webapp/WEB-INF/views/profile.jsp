@@ -10,9 +10,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="icon" type="image/png" href="../images/icons/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../css/util.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -20,21 +20,21 @@
 <link rel="stylesheet" href="css/profile.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
 <script
-	src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
 
 <script src="js/profile.js"></script>
 
 </head>
-<body onload="show()">
+<body>
+<div class="back">
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<%
 		CustomerBean temp = (CustomerBean) (session.getAttribute("user"));
 		if (temp != null) {
 	%>
-
 	<div class="main">
 		<div class="cont">
 			<b>Name</b><br> <span><%=temp.getName()%></span>
@@ -61,15 +61,20 @@
 			</label></span>
 		</div>
 		<div class="cont">
-			<b>Troubleshooting</b></span> <span class="toogle"><label
-				class="switch"> <input type="checkbox" id="trouble"><span
+			<b>MasterReset</b></span> <span class="toogle"><label
+				class="switch"> <input type="checkbox" id="mreset" ><span
+					class="slider round"></span></label></span>
+		</div>
+		<div class="cont">
+			<b>SlaveReset</b></span> <span class="toogle"><label
+				class="switch"> <input type="checkbox" id="sreset" ><span
 					class="slider round"></span></label></span>
 		</div>
 	</div>
 	<c:set var="email" value="<%=temp.getEmail()%>"></c:set>
 	<center>
-		<a href="user/${email}"><button type="button"
-				class="btn btn-info btn-lg col-2">Info</button></a>
+		<a href="user/${email}"><button type="button" id="update"
+				class="btn btn-info btn-lg col-2">Update Profile</button></a>
 	</center>
 	<%
 		} else {
@@ -78,7 +83,9 @@
 	<%
 		}
 	%>
-	<script src="js/jquery.min.js"></script>
+	<br/>
+</div>	
+	<script src="../js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 

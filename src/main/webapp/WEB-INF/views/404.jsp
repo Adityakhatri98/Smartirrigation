@@ -12,7 +12,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet"> 
 
-	<link type="text/css" rel="stylesheet" href="css/404.css" />
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/404.css" />
 
 </head>
 
@@ -31,5 +31,5 @@
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
-	<script src="js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <jsp:include page="footer.jsp"></jsp:include>

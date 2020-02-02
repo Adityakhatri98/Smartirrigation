@@ -11,7 +11,7 @@
 	href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 	rel="stylesheet" />
 
-<link rel="stylesheet" href="css/bar.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bar.css" />
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script
@@ -59,7 +59,7 @@
 	</div>
 	</div>
 	<!-- <script src="nodefunction2.js"></script> -->
-	<script src="js/bar.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bar.js"></script>
 </body>
 </html>
 <jsp:include page="footer.jsp"></jsp:include>

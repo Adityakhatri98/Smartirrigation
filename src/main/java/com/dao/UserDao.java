@@ -33,7 +33,7 @@ public class UserDao {
 	class UserMapper implements RowMapper<CustomerBean> {
 
 		public CustomerBean mapRow(ResultSet row, int rowNu) throws SQLException {
-			System.out.println("sucess");
+			System.out.println("Row Mapper : Called");
 			String email = row.getString("user_email").toLowerCase();
 			customerBean.setEmail(email);
 			customerBean.setPwd(row.getString("user_password"));
@@ -63,7 +63,7 @@ public class UserDao {
 
 		String query = "SELECT * FROM user_signup WHERE user_email = '" + email + "'";
 		List<CustomerBean> user = stmt.query(query, new UserMapper());
-		System.out.println(user.get(0));
+		System.out.println("In GetUser Dao: "+user.get(0));
 		return user.get(0);
 
 	}
@@ -72,7 +72,7 @@ public class UserDao {
 		
 		String query = "update user_signup set user_name=?,user_address=?,user_pincode=?,user_password=? where user_email='"+bean.getEmail()+"'";
 		int i=stmt.update(query,bean.getName(),bean.getAddress(),bean.getPincode(),bean.getPwd());
-		System.out.println(i);
+		System.out.println("Record Inserted Dao: "+i);
 		return i;
 		
 	}

@@ -6,6 +6,15 @@
 
 body {
 	margin: 0;
+	
+}
+
+.back{
+	background: #c850c0;
+	background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+	background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+	background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+	background: linear-gradient(45deg, #4158d0, #c850c0);		
 }
 
 .main {
@@ -17,6 +26,13 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin: 20px auto;
+	background:#f8f8f8;
+	
+}
+
+#update {
+	padding: 15px;
+	font-size: 18px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -25,6 +41,10 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		margin: 20px auto;
+	}
+	#update {
+		padding-right: 110px;
+		font-size: 15px;
 	}
 }
 
@@ -120,7 +140,6 @@ input:checked+.slider:before {
 /* 	word-wrap: break-word; */
 /* 	background-color: white; */
 /* } */
-
 .slider.round {
 	border-radius: 34px;
 	position: absolute;

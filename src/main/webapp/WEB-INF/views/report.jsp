@@ -5,25 +5,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/images/icons/favicon.ico" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendor/bootstrapt/css/bootstrap.min.css">
+	href="${pageContext.request.contextPath}/vendor/bootstrapt/css/bootstrap.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	href="${pageContext.request.contextPath}/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendor/animatet/animate.css">
+	href="${pageContext.request.contextPath}/vendor/animatet/animate.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendor/select2t/select2.min.css">
+	href="${pageContext.request.contextPath}/vendor/select2t/select2.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="vendor/perfect-scrollbart/perfect-scrollbar.css">
+	href="${pageContext.request.contextPath}/vendor/perfect-scrollbart/perfect-scrollbar.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/util.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
 <!--===============================================================================================-->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
@@ -32,7 +32,7 @@
 <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase.js"></script> -->
 <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="js/report.js"></script>
+<script src="${pageContext.request.contextPath}/js/report.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 	</div>
-		<script src="js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
