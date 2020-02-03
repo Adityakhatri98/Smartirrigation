@@ -114,7 +114,8 @@
 	<script src="${pageContext.request.contextPath}/vendorl/countdowntime/countdowntime.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/jsl/main.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<jsp:include page="jsfragment.jsp"></jsp:include>
-	<jsp:include page="footer.jsp"></jsp:include>
+<%-- 	<jsp:include page="jsfragment.jsp"></jsp:include>
+ --%>
+ 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

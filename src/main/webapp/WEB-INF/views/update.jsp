@@ -44,7 +44,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<s:form action="${pageContext.request.contextPath}/update" method="PUT" modelAttribute="customerBean">
+	<s:form action="/update" method="post" modelAttribute="customerBean">
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-login100">
@@ -54,7 +54,7 @@
 							class="fas fa-seedling" style="font-size: 35px;"></i><span>Smart</span>Irrigation
 						</span>
 						<div class="wrap-input100 validate-input">
-
+			
 							<s:input class="input100 has-val" type="text" path="name" />
 							<span class="focus-input100" data-placeholder="Name"></span>
 						</div>
