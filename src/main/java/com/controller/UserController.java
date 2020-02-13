@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.util.Locale;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -26,10 +24,10 @@ import com.dao.UserDao;
 public class UserController implements ErrorController {
 	@Autowired
 	UserDao dao;
-	
-	@Autowired
-	private MessageSource messageSource;
-	
+
+	/*
+	 * @Autowired private MessageSource messageSource;
+	 */
 	private static final String PATH = "/error";
 	private Boolean userAuth = false;
 
@@ -49,10 +47,17 @@ public class UserController implements ErrorController {
 		return "profile";
 	}
 
+	@GetMapping(value = { "/update" })
+	public String getUpdate(CustomerBean customerBean, Model model, HttpSession session) {
+		session.setAttribute("user", customerBean);
+		model.addAttribute("customerBean", customerBean);
+		return "signup";
+
+	}
 
 	@GetMapping(value = { "/login" })
 	public String getlogin(Model model) {
-		model.addAttribute("customerBean",  new CustomerBean());
+		model.addAttribute("customerBean", new CustomerBean());
 		return "login";
 	}
 
@@ -64,7 +69,7 @@ public class UserController implements ErrorController {
 
 	@PostMapping(value = { "/signup" })
 	public String getSignup(@ModelAttribute("customerBean") @Valid CustomerBean customerBean, BindingResult result,
-			Model model, RedirectAttributes attributes,HttpServletRequest request) {
+			Model model, HttpServletRequest request) {
 		if (result.hasErrors()) {
 			return "signup";
 		} else {
@@ -82,27 +87,26 @@ public class UserController implements ErrorController {
 
 	@PostMapping(value = { "/login" })
 	public String getLogin(@ModelAttribute("customerBean") @Valid CustomerBean customerBean, BindingResult result,
-			Model model, HttpSession session, HttpServletRequest  request) {
-		
+			Model model, HttpSession session, HttpServletRequest request) {
+
 		Boolean check = dao.getUser(customerBean);
 		if (check) {
 			session.setAttribute("user", customerBean);
 			userAuth = true;
 			return "index";
-		} else if (result.hasErrors()) {			
+		} else if (result.hasErrors()) {
 			userAuth = false;
-			request.setAttribute("error","Email or Password is incorrect !!");
+			request.setAttribute("error", "Email or Password is incorrect !!");
 			return "login";
-		}
-		else {
+		} else {
 			return "redirect:login";
 		}
 	}
 
 	@GetMapping(value = { "/user/{email}" })
 	public String getUser(@PathVariable("email") String email, Model model) {
-		CustomerBean bean = dao.getUser(email);
-		model.addAttribute("customerBean", bean);
+		CustomerBean customerBean = dao.getUser(email);
+		model.addAttribute("customerBean", customerBean);
 		return "update";
 	}
 
@@ -121,23 +125,23 @@ public class UserController implements ErrorController {
 //	}
 //
 	@PostMapping(value = { "/update" })
-	public String getPage(@ModelAttribute("customerBean") @Valid CustomerBean bean, 
-			HttpSession session,BindingResult result) {
-		System.out.println("in update");
-		int i = dao.updateUser(bean);
-		if (i == 1) {
-			session.setAttribute("user", bean);
-			System.out.println("final : " + bean);
-			return "profile";
-		} else if(result.hasErrors()){
+	public String getPage(@ModelAttribute("customerBean") @Valid CustomerBean customerBean, BindingResult result,
+			Model model, HttpSession session) {
+		int i = dao.updateUser(customerBean);
+		session.setAttribute("user", customerBean);
+		System.out.println("in Session : " + customerBean);
+		if (result.hasErrors()) {
 			System.out.println("inerror");
 			return "update";
-		}
-		else {
-			return "redirect:update";
+		} else if (i == 1) {
+			session.setAttribute("user", customerBean);
+			System.out.println("final : " + customerBean);
+			return "profile";
+		} else {
+			return "update";
 		}
 	}
-	
+
 //	@PutMapping(value = { "/update" })
 //	public String getUser(@ModelAttribute("customerBean") @Valid CustomerBean bean, 
 //			HttpSession session,BindingResult result) {

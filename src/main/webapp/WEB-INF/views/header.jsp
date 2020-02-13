@@ -38,7 +38,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index" style="font-family: Poppins-Regular;"> <i class="fas fa-seedling"
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/index" style="font-family: Poppins-Regular;"> <i class="fas fa-seedling"
 				style="font-size: 30px;"></i><span style="font-family: Poppins-Regular;">Smart</span>Crop
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"

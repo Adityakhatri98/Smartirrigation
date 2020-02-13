@@ -41,6 +41,7 @@ public class UserDao {
 			customerBean.setName(row.getString("user_name"));
 			customerBean.setPincode(row.getString("user_pincode"));
 			customerBean.setPhone(row.getString("user_phone"));
+			System.out.println("in Mapper : "+customerBean);
 			return customerBean;
 		}
 	}
@@ -63,18 +64,16 @@ public class UserDao {
 
 		String query = "SELECT * FROM user_signup WHERE user_email = '" + email + "'";
 		List<CustomerBean> user = stmt.query(query, new UserMapper());
-		System.out.println("In GetUser Dao: "+user.get(0));
 		return user.get(0);
 
 	}
 
 	public int updateUser(CustomerBean bean) {
 		
-		String query = "update user_signup set user_name=?,user_address=?,user_pincode=?,user_password=? where user_email='"+bean.getEmail()+"'";
-		int i=stmt.update(query,bean.getName(),bean.getAddress(),bean.getPincode(),bean.getPwd());
+		String query = "update user_signup set user_name=?,user_address=?,user_pincode=?,user_password=?,user_phone=? where user_email='"+bean.getEmail()+"'";
+		int i=stmt.update(query,bean.getName(),bean.getAddress(),bean.getPincode(),bean.getPwd(),bean.getPhone());
 		System.out.println("Record Inserted Dao: "+i);
 		return i;
-		
 	}
 
 }
