@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/flaticon.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<!-- ftco-navbar -->
 </head>
 <body>
 	<nav
@@ -47,7 +48,7 @@
 				<span class="oi oi-menu"></span> Menu
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto" >
 					<%
 						CustomerBean temp = (CustomerBean) (session.getAttribute("user"));
 						if (temp == null) {

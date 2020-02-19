@@ -13,10 +13,10 @@
 <link rel="icon" type="image/png" href="../images/icons/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="../css/util.css">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<link
+<!-- <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" />
-<title>Profile</title>
+ --><title>Profile</title>
 <link rel="stylesheet" href="css/profile.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,7 +35,7 @@
 		CustomerBean temp = (CustomerBean) (session.getAttribute("user"));
 		if (temp != null) {
 	%>
-	<div class="main">
+	<div class="mainpro">
 		<div class="cont">
 			<b>Name</b><br> <span><%=temp.getName()%></span>
 		</div>
@@ -73,7 +73,7 @@
 	</div>
 	<c:set var="email" value="<%=temp.getEmail()%>"></c:set>
 	<center>
-		<a href="user/${email}"><button type="button" id="update"
+		<a href="user/${email}"><button type="button" id="updatepro"
 				class="btn btn-info btn-lg col-2">Update Profile</button></a>
 	</center>
 	<%

@@ -12,30 +12,42 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
 	rel="stylesheet" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/open-iconic-bootstrap.min.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/open-iconic-bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/animate.css" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.theme.default.min.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/magnific-popup.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/owl.carousel.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/owl.theme.default.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/magnific-popup.css" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/aos.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/aos.css" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/ionicons.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/ionicons.min.css" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-datepicker.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.timepicker.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootstrap-datepicker.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/jquery.timepicker.css" />
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/flaticon.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/flaticon.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/icomoon.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/style.css" />
 
 </head>
 <body>
 
 	<jsp:include page="header.jsp"></jsp:include>
-	<a name="Home"></a>
+	<a id="Home"></a>
 	<div class="hero-wrap"
 		style="background-image: url('images/bg_1.jpg'); background-attachment: fixed;">
 		<div class="overlay"></div>
@@ -57,59 +69,59 @@
 			</div>
 
 		</div>
-		<a name="Service"></a>
+
 	</div>
 
-
+	<a id="service"></a>
 	<section class="ftco-section-2 img"
 		style="background-image: url(images/bg_3.jpg);">
 
 		<div class="container">
-		
+
 			<div class="row d-md-flex justify-content-end">
-		<a name="Service"></a>
+
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-12">
-							
+
 							<div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
 										class="ion-ios-arrow-forward"></span>
 								</div>
-								
-								<h2>Services 1</h2>
-								<p>Even the all-powerful Pointing has no control about the
-									blind.</p>
-							</div> <div class="services-wrap ftco-animate">
+
+								<h2>Real Time Monitoring</h2>
+								<p>Check live value of field moisture level.</p>
+							</div>
+							<div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
 										class="ion-ios-arrow-forward"></span>
 								</div>
-								<h2>Services 2</h2>
-								<p>Even the all-powerful Pointing has no control about the
-									blind.</p>
-							</div> <div class="services-wrap ftco-animate">
+								<h2>Substitution of Data</h2>
+								<p>In case of any Issue with hardware recovery is available.</p>
+							</div>
+							<div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
 										class="ion-ios-arrow-forward"></span>
 								</div>
-								<h2>Service 3</h2>
-								<p>Even the all-powerful Pointing has no control about the
-									blind.</p>
-							</div> <div class="services-wrap ftco-animate">
+								<h2>Multiple Modes</h2>
+								<p>Different mode available which can be used as per user preference.</p>
+							</div>
+							<div class="services-wrap ftco-animate">
 								<div
 									class="icon d-flex justify-content-center align-items-center">
 									<span class="ion-ios-arrow-back"></span> <span
 										class="ion-ios-arrow-forward"></span>
 								</div>
-								<h2>services 4</h2>
-								<p>Even the all-powerful Pointing has no control about the
-									blind.</p>
-							</div> <a name="About"></a>
+								<h2>Troubleshooting</h2>
+								<p>In case of Hardware minor issues can be solved by troubleshooting.</p>
+							</div>
+							<a id="About"></a>
 						</div>
 					</div>
 				</div>
@@ -171,7 +183,7 @@
 	</section>
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
-	
+
 	<!-- loader -->
 	<div id="ftco-loader" class="show fullscreen">
 		<svg class="circular" width="48px" height="48px">
@@ -237,6 +249,6 @@
 	</div>
 
 
-	
+
 </body>
 </html>
