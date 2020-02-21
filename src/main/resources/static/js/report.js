@@ -40,8 +40,6 @@ function gotData(data) {
 
 		function gotData1(data) {
 
-			console.log(data.val());
-
 			var usrData1 = data.val();
 			var keys1 = Object.keys(usrData1);
 			for (var i = 0; i < keys1.length; i++) {

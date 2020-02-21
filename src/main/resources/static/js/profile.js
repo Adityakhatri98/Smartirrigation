@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	checkMode();
 	masterReset();
-	salveReset();
+	slaveReset();
 });
 
 function checkMode() {
@@ -70,28 +70,44 @@ function masterReset() {
 }
 
 
-function salveReset() {
+function slaveReset() {
 	database = firebase.database();
-	var reff = database.ref('settings/RESET_NODES/SLAVE_RESET');
-	reff.on('value', gotData);
+	var ref1 = database.ref('settings/RESET_NODES/node1reset');
+	var ref2 = database.ref('settings/RESET_NODES/node2reset');
+	var ref3 = database.ref('settings/RESET_NODES/node3reset');
+	var ref4 = database.ref('settings/RESET_NODES/node4reset');
+	ref1.on('value', gotData);
+	ref2.on('value', gotData);
+	ref3.on('value', gotData);
+	ref4.on('value', gotData);
 
 	function gotData(data) {
+	
 		var data=data.val();
+		
 		if(data==1)
 		{
 			$("#sreset").prop("checked", true);
+			
 		}
 		else
 		{
 			$("#sreset").prop("checked", false);
 		}
+	
 	}
-    $('#sreset').change(function() {
+	$('#sreset').change(function() {
         if(this.checked) {
-        	reff.set(1);
+        	ref1.set(1);
+        	ref2.set(1);
+        	ref3.set(1);
+        	ref4.set(1);
         }
         else{
-        	reff.set(0);
+        	ref1.set(0);
+        	ref2.set(0);
+        	ref3.set(0);
+        	ref4.set(0);
         }    
     });
 }
