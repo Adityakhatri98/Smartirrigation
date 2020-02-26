@@ -35,6 +35,7 @@ public class UserDao {
 		public CustomerBean mapRow(ResultSet row, int rowNu) throws SQLException {
 			System.out.println("Row Mapper : Called");
 			String email = row.getString("user_email").toLowerCase();
+			customerBean.setId(row.getInt("user_id"));
 			customerBean.setEmail(email);
 			customerBean.setPwd(row.getString("user_password"));
 			customerBean.setAddress(row.getString("user_address"));
@@ -57,6 +58,21 @@ public class UserDao {
 		} else {
 			System.out.println("Dao : "+bean);
 			return true;
+		}
+	}
+	
+	//rest
+	public CustomerBean getUserRest(CustomerBean customerBean) {
+
+		this.customerBean = customerBean;
+		String query = "SELECT * FROM user_signup WHERE user_email = '" + customerBean.getEmail()
+				+ "' and user_password = '" + customerBean.getPwd() + "'";
+		List<CustomerBean> bean = stmt.query(query, new UserMapper());
+		if (bean.isEmpty()) {
+			return null;
+		} else {
+			System.out.println("Dao : "+bean);
+			return bean.get(0);
 		}
 	}
 

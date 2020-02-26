@@ -35,6 +35,8 @@ public class CustomerBean {
 	@NotNull(message="Please enter valid Phone !!")
 	private String phone;
 
+	
+	
 	public String getPincode() {
 		return pincode;
 	}
