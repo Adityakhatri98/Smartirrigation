@@ -4,8 +4,10 @@
 <title>Report</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/images/icons/favicon.ico" />
+<link rel="icon" type="image/png"
+	href="${pageContext.request.contextPath}/images/icons/favicon.ico" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/vendor/bootstrapt/css/bootstrap.min.css">
@@ -22,8 +24,10 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/vendor/perfect-scrollbart/perfect-scrollbar.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/util.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/util.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/main.css">
 <!--===============================================================================================-->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
@@ -41,6 +45,14 @@
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100">
+					<div class="dropdown" id="DropList">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							 id="dropdownMenu2" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Select Your
+							Date</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenu2"
+							id="mySelect"></div>
+					</div>
 					<table id="tid">
 						<thead>
 							<tr class="table100-head">
@@ -60,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>

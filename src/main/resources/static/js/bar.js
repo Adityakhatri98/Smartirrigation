@@ -1,19 +1,20 @@
 var firebaseConfig = {
-	apiKey : "AIzaSyAS4O2P0xde6bt7KSIARhFBtcIM_uwisTE",
-	authDomain : "temp-nodewise.firebaseapp.com",
-	databaseURL : "https://temp-nodewise.firebaseio.com",
-	projectId : "temp-nodewise",
-	storageBucket : "temp-nodewise.appspot.com",
-	messagingSenderId : "698349958185",
-	appId : "1:698349958185:web:8df63c7d85c0b3dd"
+	apiKey : "AIzaSyCOsmsmUhZe_K_-_nn3d4mzrRtZhQ-gfA8",
+	authDomain : "official-database.firebaseapp.com",
+	databaseURL : "https://official-database.firebaseio.com",
+	projectId : "official-database",
+	storageBucket : "official-database.appspot.com",
+	messagingSenderId : "992211092659",
+	appId : "1:992211092659:web:0c0055f716b6d855cddcc6",
+	measurementId : "G-7D1FBPWZE9"
 };
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 var nodedata = [];
 function show() {
 	database = firebase.database();
 	
-	var reff = database.ref('node_data/allnodedata');
+	var reff = database.ref('USER/user1/node_data/allnodedata');
 	reff.on('value', gotData, errData);
 
 	function gotData(data) {

@@ -1,12 +1,14 @@
 var firebaseConfig = {
-			apiKey : "AIzaSyAS4O2P0xde6bt7KSIARhFBtcIM_uwisTE",
-			authDomain : "temp-nodewise.firebaseapp.com",
-			databaseURL : "https://temp-nodewise.firebaseio.com",
-			projectId : "temp-nodewise",
-			storageBucket : "temp-nodewise.appspot.com",
-			messagingSenderId : "698349958185",
-			appId : "1:698349958185:web:8df63c7d85c0b3dd"
-		};
+	apiKey : "AIzaSyCOsmsmUhZe_K_-_nn3d4mzrRtZhQ-gfA8",
+	authDomain : "official-database.firebaseapp.com",
+	databaseURL : "https://official-database.firebaseio.com",
+	projectId : "official-database",
+	storageBucket : "official-database.appspot.com",
+	messagingSenderId : "992211092659",
+	appId : "1:992211092659:web:0c0055f716b6d855cddcc6",
+	measurementId : "G-7D1FBPWZE9"
+};
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 $(document).ready(function() {
@@ -18,7 +20,7 @@ $(document).ready(function() {
 
 function checkMode() {
 	database = firebase.database();
-	var reff = database.ref('settings/MASTER_MODE/manual');
+	var reff = database.ref('USER/user1/settings/MASTER_MODE/manual');
 	reff.on('value', gotData);
 
 	function gotData(data) {
@@ -45,7 +47,7 @@ function checkMode() {
 
 function masterReset() {
 	database = firebase.database();
-	var reff = database.ref('settings/RESET_NODES/MASTER_RESET');
+	var reff = database.ref('USER/user1/settings/RESET_NODES/MASTER_RESET');
 	reff.on('value', gotData);
 
 	function gotData(data) {
@@ -72,10 +74,10 @@ function masterReset() {
 
 function slaveReset() {
 	database = firebase.database();
-	var ref1 = database.ref('settings/RESET_NODES/node1reset');
-	var ref2 = database.ref('settings/RESET_NODES/node2reset');
-	var ref3 = database.ref('settings/RESET_NODES/node3reset');
-	var ref4 = database.ref('settings/RESET_NODES/node4reset');
+	var ref1 = database.ref('USER/user1/settings/RESET_NODES/node1reset');
+	var ref2 = database.ref('USER/user1/settings/RESET_NODES/node2reset');
+	var ref3 = database.ref('USER/user1/settings/RESET_NODES/node3reset');
+	var ref4 = database.ref('USER/user1/settings/RESET_NODES/node4reset');
 	ref1.on('value', gotData);
 	ref2.on('value', gotData);
 	ref3.on('value', gotData);

@@ -1,13 +1,13 @@
 var firebaseConfig = {
-	apiKey : "AIzaSyAS4O2P0xde6bt7KSIARhFBtcIM_uwisTE",
-	authDomain : "temp-nodewise.firebaseapp.com",
-	databaseURL : "https://temp-nodewise.firebaseio.com",
-	projectId : "temp-nodewise",
-	storageBucket : "temp-nodewise.appspot.com",
-	messagingSenderId : "698349958185",
-	appId : "1:698349958185:web:898c131387ac4ec7bb1838"
+	apiKey : "AIzaSyCOsmsmUhZe_K_-_nn3d4mzrRtZhQ-gfA8",
+	authDomain : "official-database.firebaseapp.com",
+	databaseURL : "https://official-database.firebaseio.com",
+	projectId : "official-database",
+	storageBucket : "official-database.appspot.com",
+	messagingSenderId : "992211092659",
+	appId : "1:992211092659:web:0c0055f716b6d855cddcc6",
+	measurementId : "G-7D1FBPWZE9"
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -16,50 +16,93 @@ var n2;
 var n3;
 var n4;
 var database1 = firebase.database();
-var rootRef = database1.ref('LOGS/');
-
+var rootRef = database1.ref('USER/user1/LOGS/');
+var rootRef1;
 rootRef.on('value', gotData, errData);
+
+function reply_click(clicked_id) {
+	after(clicked_id);
+}
 
 function gotData(data) {
 	// console.log(data.val());
 
 	var usrData = data.val();
 	var keys = Object.keys(usrData);
-	resetTable();
-	var date = new Date(); 	
-
-//	alert(k1);
 	for (var i = 0; i < keys.length; i++) {
-		
-		//All Dates
-		var k1 = keys[i];
-		//var k1 =  date.getFullYear() + "-" + (date.getMonth()+1) + "-"+ (date.getDate()+1);
-		
-		var rootRef1 = database1.ref('LOGS/' + k1);
-		rootRef1.on('value', gotData1, errData1);
-
-		function gotData1(data) {
-
-			var usrData1 = data.val();
-			var keys1 = Object.keys(usrData1);
-			for (var i = 0; i < keys1.length; i++) {
-				k = keys1[i];
-				n1 = usrData1[k].node1;
-				n2 = usrData1[k].node2;
-				n3 = usrData1[k].node3;
-				n4 = usrData1[k].node4;
-				check();
-
-				$("#table_body").append(
-						"<tr><td>" + k1 + "</td><td>" + k + "</td>" + n1 + n2
-								+ n3 + n4 + "</tr>");
-			}
-		}
-		function errData1(err) {
-			
-		}
+		$("#mySelect").append(
+				"<button onClick='reply_click(this.id)' class='dropdown-item' id="
+						+ keys[i] + " type='button'>" + keys[i] + "</button>")
+		init(keys);
 	}
 }
+
+function after(clicked_id) {
+	rootRef1 = database1.ref('USER/user1/LOGS/' + clicked_id);
+	rootRef1.on('value', gotData1, errData1);
+	function gotData1(data) {
+		resetTable();
+		var usrData1 = data.val();
+		var keys1 = Object.keys(usrData1);
+		for (var i = 0; i < keys1.length; i++) {
+			k = keys1[i];
+			n1 = usrData1[k].node1;
+			n2 = usrData1[k].node2;
+			n3 = usrData1[k].node3;
+			n4 = usrData1[k].node4;
+			check();
+			document.getElementById("dropdownMenu2").innerHTML = clicked_id;
+			$("#table_body").append(
+					"<tr><td>" + clicked_id + "</td><td>" + k + "</td>" + n1
+							+ n2 + n3 + n4 + "</tr>");
+			document.getElementById("dropdownMenu2").innerHTML = clicked_id;
+		}
+	}
+	function errData1(err) {
+
+	}
+
+}
+function init(keys) {
+
+	rootRef1 = database1.ref('USER/user1/LOGS/' + keys[keys.length-1]);
+	rootRef1.on('value', gotData1, errData1);
+	function gotData1(data) {
+		resetTable();
+		var usrData1 = data.val();
+		var keys1 = Object.keys(usrData1);
+		for (var i = 0; i < keys1.length; i++) {
+			k = keys1[i];
+			n1 = usrData1[k].node1;
+			n2 = usrData1[k].node2;
+			n3 = usrData1[k].node3;
+			n4 = usrData1[k].node4;
+			check();
+			document.getElementById("dropdownMenu2").innerHTML = keys[keys.length-1];
+			$("#table_body").append(
+					"<tr><td>" + keys[keys.length-1] + "</td><td>" + k + "</td>" + n1 + n2
+							+ n3 + n4 + "</tr>");
+			document.getElementById("dropdownMenu2").innerHTML = keys[keys.length-1];
+		}
+	}
+	function errData1(err) {
+
+	}
+
+}
+
+rootRef.on('child_changed', function(data) {
+	document.getElementById("mySelect").innerHTML = "";
+});
+
+rootRef.on('child_removed', function(data) {
+	document.getElementById("mySelect").innerHTML = "";
+});
+
+rootRef.on('child_added', function(data) {
+	document.getElementById("mySelect").innerHTML = "";
+});
+
 
 function errData(err) {
 	console.log('ERROR!');

@@ -52,6 +52,17 @@
 <style type="text/css">
 .error {
 	color: red;
+	
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
 }
 </style>
 </head>
@@ -78,7 +89,8 @@
 						<div class="inputdata"></div>
 
 						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="phone" />
+							<s:input class="input100" 
+							type="number" path="phone"/>
 							<span class="focus-input100" data-placeholder="Phone No."></span>
 						</div>
 						<s:errors path="phone" cssClass="error"></s:errors>
@@ -92,7 +104,8 @@
 						<div class="inputdata"></div>
 
 						<div class="wrap-input100 validate-input">
-							<s:input class="input100" type="text" path="pincode" />
+							<s:input class="input100" 
+							type="number" path="pincode"/>
 							<span class="focus-input100" data-placeholder="Pincode"></span>
 						</div>
 
