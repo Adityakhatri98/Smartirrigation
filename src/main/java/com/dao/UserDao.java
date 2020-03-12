@@ -21,11 +21,10 @@ public class UserDao {
 
 	public int insertUser(CustomerBean customerBean) {
 
-		System.out.println(customerBean);
 		Integer pin = new Integer(customerBean.getPincode());
-		String query = "INSERT INTO user_signup(user_name, user_address, user_phone, user_pincode, user_email, user_password) VALUES (?,?,?,?,?,?)";
+		String query = "INSERT INTO user_signup(user_name, user_address, user_phone, user_pincode, user_email, user_password,user_node,user_auth) VALUES (?,?,?,?,?,?,?,?)";
 		int i = stmt.update(query, customerBean.getName(), customerBean.getAddress(), customerBean.getPhone(), pin,
-				customerBean.getEmail(), customerBean.getPwd());
+				customerBean.getEmail(), customerBean.getPwd(),customerBean.getNode(),customerBean.getAuth());
 		System.out.println(i + " : Record Inserted");
 		return i;
 	}
@@ -42,6 +41,8 @@ public class UserDao {
 			customerBean.setName(row.getString("user_name"));
 			customerBean.setPincode(row.getString("user_pincode"));
 			customerBean.setPhone(row.getString("user_phone"));
+			customerBean.setNode(row.getString("user_node"));
+			customerBean.setAuth(row.getString("user_auth"));
 			System.out.println("in Mapper : "+customerBean);
 			return customerBean;
 		}

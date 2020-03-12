@@ -25,9 +25,6 @@ public class UserController implements ErrorController {
 	@Autowired
 	UserDao dao;
 
-	/*
-	 * @Autowired private MessageSource messageSource;
-	 */
 	private static final String PATH = "/error";
 	private Boolean userAuth = false;
 

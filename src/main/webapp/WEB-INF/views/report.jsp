@@ -47,13 +47,17 @@
 				<div class="table100">
 					<div class="dropdown" id="DropList">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
-							 id="dropdownMenu2" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">Select Your
-							Date</button>
+							id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Select Your Date</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2"
 							id="mySelect"></div>
 					</div>
-					<table id="tid">
+			<!-- 		<div class="input-field col s12" id="DropList1">
+						<select id="mySelect1">
+							<option value="" id="dropdownMenu" disabled selected>Choose your option</option>
+						</select> <label>Date : </label>
+					</div>
+			 -->		<table id="tid">
 						<thead>
 							<tr class="table100-head">
 								<td>Date</td>
