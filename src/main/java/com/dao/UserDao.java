@@ -30,6 +30,7 @@ public class UserDao {
 			return true;
 		}
 	}
+	
 
 	public int insertUser(CustomerBean customerBean) {
 		int i = 0;
@@ -44,7 +45,7 @@ public class UserDao {
 			return i;
 		}
 	}
-
+	
 	class UserMapper implements RowMapper<CustomerBean> {
 
 		public CustomerBean mapRow(ResultSet row, int rowNu) throws SQLException {

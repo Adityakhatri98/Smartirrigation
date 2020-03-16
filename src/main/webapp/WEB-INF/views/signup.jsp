@@ -94,10 +94,10 @@ input[type=number] {
 							<span class="focus-input100" data-placeholder="Phone No."></span>
 						</div>
 						<s:errors path="phone" cssClass="error"></s:errors>
-						<%String phone = (String)request.getAttribute("phone");%>
+			<%-- 			<%String phone = (String)request.getAttribute("phone");%>
 						<div class="error"><%=phone!= null ? phone :""%>
 						
-						<div class="inputdata"></div>
+			 --%>			<div class="inputdata"></div>
 
 						<div class="wrap-input100 validate-input">
 							<s:input class="input100" type="text" path="address" />

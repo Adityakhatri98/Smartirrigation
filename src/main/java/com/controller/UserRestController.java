@@ -12,38 +12,42 @@ import com.dao.UserDao;
 
 @RestController
 public class UserRestController {
-	
+
 	@Autowired
 	UserDao dao;
-	
-	@PostMapping(value="/user")
-	public ResponseEntity<CustomerBean> insertUser(CustomerBean bean)
-	{
-		
+
+	@PostMapping(value = "/user")
+	public ResponseEntity<CustomerBean> insertUser(CustomerBean bean) {
+
 		int i = dao.insertUser(bean);
 		if (i > 0) {
 			return new ResponseEntity<CustomerBean>(bean, HttpStatus.OK);
-		}
-		else if(i==0)
-		{
-			return new ResponseEntity<CustomerBean>(HttpStatus.ALREADY_REPORTED);
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
-	
-	@PostMapping(value="/1")
-	public CustomerBean getUser(CustomerBean bean)
-	{
-		 CustomerBean customerBean = dao.getUserRest(bean);
-		if (customerBean!=null) {
+
+	@PostMapping(value = "/email")
+	public ResponseEntity<CustomerBean> CheckEmail(CustomerBean bean) {
+		System.out.println(dao.checkEmail(bean));
+		if (dao.checkEmail(bean)) {
+			return new ResponseEntity<CustomerBean>(HttpStatus.ALREADY_REPORTED);
+			
+		} else {
+			return new ResponseEntity<CustomerBean>(HttpStatus.OK);
+
+		}
+	}
+
+	@PostMapping(value = "/1")
+	public CustomerBean getUser(CustomerBean bean) {
+		CustomerBean customerBean = dao.getUserRest(bean);
+		if (customerBean != null) {
 			System.out.println(customerBean);
 			return customerBean;
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
-	
+
 }
