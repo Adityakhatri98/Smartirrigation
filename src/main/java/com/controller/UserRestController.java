@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bean.ApiError;
 import com.bean.CustomerBean;
 import com.dao.UserDao;
 
@@ -28,14 +29,15 @@ public class UserRestController {
 	}
 
 	@PostMapping(value = "/email")
-	public ResponseEntity<CustomerBean> CheckEmail(CustomerBean bean) {
+	public ResponseEntity<ApiError> CheckEmail(CustomerBean bean) {
 		System.out.println(dao.checkEmail(bean));
 		if (dao.checkEmail(bean)) {
-			return new ResponseEntity<CustomerBean>(HttpStatus.ALREADY_REPORTED);
+			ApiError error = new ApiError(String.valueOf(HttpStatus.CONFLICT).split(" ")[0],"Email Is already Registred");
+			return new ResponseEntity<>(error,HttpStatus.OK);
 			
 		} else {
-			return new ResponseEntity<CustomerBean>(HttpStatus.OK);
-
+			ApiError error = new ApiError(String.valueOf(HttpStatus.OK).split(" ")[0],"Done");
+			return new ResponseEntity<ApiError>(error,HttpStatus.OK);
 		}
 	}
 

@@ -74,7 +74,7 @@ public class UserController implements ErrorController {
 			if (i > 0) {
 				return "redirect:login";
 			} else {
-				request.setAttribute("email", "Email is already registred !!");
+				request.setAttribute("email", "Email is already registered !!");
 				return "signup";
 			}
 		}
