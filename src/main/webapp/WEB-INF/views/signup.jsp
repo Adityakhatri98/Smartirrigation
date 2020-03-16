@@ -94,6 +94,9 @@ input[type=number] {
 							<span class="focus-input100" data-placeholder="Phone No."></span>
 						</div>
 						<s:errors path="phone" cssClass="error"></s:errors>
+						<%String phone = (String)request.getAttribute("phone");%>
+						<div class="error"><%=phone!= null ? phone :""%>
+						
 						<div class="inputdata"></div>
 
 						<div class="wrap-input100 validate-input">
@@ -120,6 +123,8 @@ input[type=number] {
 						</div>
 
 						<s:errors path="email" cssClass="error"></s:errors>
+						<%String error = (String)request.getAttribute("email");%>
+						<div class="error"><%=error!= null ? error :""%>
 						<div class="inputdata"></div>
 
 						<div class="wrap-input100 validate-input"
@@ -132,8 +137,8 @@ input[type=number] {
 
 						<s:errors path="pwd" cssClass="error"></s:errors>
 						<div class="inputdata"></div>
-
-
+						</div>
+		
 						<div class="container-login100-form-btn">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>

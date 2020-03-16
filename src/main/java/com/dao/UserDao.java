@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -19,14 +20,29 @@ public class UserDao {
 	@Autowired
 	CustomerBean customerBean;
 
-	public int insertUser(CustomerBean customerBean) {
+	public boolean checkEmail(CustomerBean customerBean) {
+		String query = "select * from User_signup where user_email = '" + customerBean.getEmail() + "'";
+		List<CustomerBean> bean = stmt.query(query, new UserMapper());
+		if (bean.isEmpty()) {
+			return false;
+		} else {
+			System.out.println("Dao : " + bean);
+			return true;
+		}
+	}
 
-		Integer pin = new Integer(customerBean.getPincode());
-		String query = "INSERT INTO user_signup(user_name, user_address, user_phone, user_pincode, user_email, user_password,user_node,user_auth) VALUES (?,?,?,?,?,?,?,?)";
-		int i = stmt.update(query, customerBean.getName(), customerBean.getAddress(), customerBean.getPhone(), pin,
-				customerBean.getEmail(), customerBean.getPwd(),customerBean.getNode(),customerBean.getAuth());
-		System.out.println(i + " : Record Inserted");
-		return i;
+	public int insertUser(CustomerBean customerBean) {
+		int i = 0;
+		if (checkEmail(customerBean)) {
+			return i;
+		} else {
+			Integer pin = new Integer(customerBean.getPincode());
+			String query = "INSERT INTO user_signup(user_name, user_address, user_phone, user_pincode, user_email, user_password,user_node,user_auth) VALUES (?,?,?,?,?,?,?,?)";
+			i = stmt.update(query, customerBean.getName(), customerBean.getAddress(), customerBean.getPhone(), pin,
+					customerBean.getEmail(), customerBean.getPwd(), customerBean.getNode(), customerBean.getAuth());
+			System.out.println(i + " : Record Inserted");
+			return i;
+		}
 	}
 
 	class UserMapper implements RowMapper<CustomerBean> {
@@ -43,7 +59,7 @@ public class UserDao {
 			customerBean.setPhone(row.getString("user_phone"));
 			customerBean.setNode(row.getString("user_node"));
 			customerBean.setAuth(row.getString("user_auth"));
-			System.out.println("in Mapper : "+customerBean);
+			System.out.println("in Mapper : " + customerBean);
 			return customerBean;
 		}
 	}
@@ -57,12 +73,12 @@ public class UserDao {
 		if (bean.isEmpty()) {
 			return false;
 		} else {
-			System.out.println("Dao : "+bean);
+			System.out.println("Dao : " + bean);
 			return true;
 		}
 	}
-	
-	//rest
+
+	// rest
 	public CustomerBean getUserRest(CustomerBean customerBean) {
 
 		this.customerBean = customerBean;
@@ -72,7 +88,7 @@ public class UserDao {
 		if (bean.isEmpty()) {
 			return null;
 		} else {
-			System.out.println("Dao : "+bean);
+			System.out.println("Dao : " + bean);
 			return bean.get(0);
 		}
 	}
@@ -86,10 +102,12 @@ public class UserDao {
 	}
 
 	public int updateUser(CustomerBean bean) {
-		
-		String query = "update user_signup set user_name=?,user_address=?,user_pincode=?,user_password=?,user_phone=? where user_email='"+bean.getEmail()+"'";
-		int i=stmt.update(query,bean.getName(),bean.getAddress(),bean.getPincode(),bean.getPwd(),bean.getPhone());
-		System.out.println("Record Inserted Dao: "+i);
+
+		String query = "update user_signup set user_name=?,user_address=?,user_pincode=?,user_password=?,user_phone=? where user_email='"
+				+ bean.getEmail() + "'";
+		int i = stmt.update(query, bean.getName(), bean.getAddress(), bean.getPincode(), bean.getPwd(),
+				bean.getPhone());
+		System.out.println("Record Inserted Dao: " + i);
 		return i;
 	}
 

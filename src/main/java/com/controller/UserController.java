@@ -72,11 +72,9 @@ public class UserController implements ErrorController {
 		} else {
 			int i = dao.insertUser(customerBean);
 			if (i > 0) {
-//				model.addAttribute("check","Success");
-//				attributes.addFlashAttribute(temp, messageSource.getMessage("signup.save.success", new Object[]{}, Locale.US));
-				System.out.println("login");
 				return "redirect:login";
 			} else {
+				request.setAttribute("email", "Email is already registred !!");
 				return "signup";
 			}
 		}

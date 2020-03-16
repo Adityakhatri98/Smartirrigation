@@ -1,6 +1,8 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +17,18 @@ public class UserRestController {
 	UserDao dao;
 	
 	@PostMapping(value="/user")
-	public CustomerBean insertUser(CustomerBean bean)
+	public ResponseEntity<CustomerBean> insertUser(CustomerBean bean)
 	{
+		
 		int i = dao.insertUser(bean);
 		if (i > 0) {
-			System.out.println(i);
-			return bean;
-		} else {
+			return new ResponseEntity<CustomerBean>(bean, HttpStatus.OK);
+		}
+		else if(i==0)
+		{
+			return new ResponseEntity<CustomerBean>(HttpStatus.ALREADY_REPORTED);
+		}
+		else {
 			return null;
 		}
 	}
