@@ -48,10 +48,6 @@
 <!-- ftco-navbar -->
 </head>
 <body>
-	<%
-		CustomerBean node = (CustomerBean) (session.getAttribute("user"));
-	%>
-	<input type="hidden" id="hidenode" value="<%=node.getNode()%>"/>
 	<nav
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">

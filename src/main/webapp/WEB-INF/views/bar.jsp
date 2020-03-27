@@ -23,6 +23,11 @@
 </head>
 <body onload="show()">
 	<!-- Container containing all the elements -->
+		<%
+		CustomerBean node = (CustomerBean) (session.getAttribute("user"));
+	%>
+	<input type="hidden" id="hidenode" value="<%=node.getNode()%>"/>
+	
 	<div class="circleBar">
 		<h3 class="title">Node Values</h3>
 		<div class="container ">

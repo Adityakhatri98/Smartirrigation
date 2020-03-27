@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="com.bean.CustomerBean"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +39,14 @@
 <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase.js"></script> -->
 <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="${pageContext.request.contextPath}/js/report.js"></script>
+
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-
+	<%
+		CustomerBean report = (CustomerBean) (session.getAttribute("user"));
+	%>
+	<input type="hidden" id="hidenode" value="<%=report.getNode()%>"/>
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -77,6 +83,7 @@
 		</div>
 	</div>
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/report.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>

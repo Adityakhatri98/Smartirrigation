@@ -31,11 +31,7 @@ function gotData(data) {
 	var usrData = data.val();
 	var keys = Object.keys(usrData);
 	for (var i = 0; i < keys.length; i++) {
-		
-		
-/*		$("#mySelect1").append("<option onClick='reply_click(this.id)' id="
-						+ keys[i] + ">"+keys[i]+"</option>")
-*/				
+						
 		$("#mySelect").append(
 				"<button onClick='reply_click(this.id)' class='dropdown-item' id="
 						+ keys[i] + " type='button'>" + keys[i] + "</button>")
