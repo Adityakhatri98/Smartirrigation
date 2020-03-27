@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="com.bean.CustomerBean"%>
 <jsp:include page="header.jsp"></jsp:include>
-
 
 <html>
 <head>
@@ -11,7 +11,8 @@
 	href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 	rel="stylesheet" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bar.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bar.css" />
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script
@@ -58,7 +59,6 @@
 		</div>
 	</div>
 	</div>
-	<!-- <script src="nodefunction2.js"></script> -->
 	<script src="${pageContext.request.contextPath}/js/bar.js"></script>
 </body>
 </html>

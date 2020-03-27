@@ -16,7 +16,8 @@ var n2;
 var n3;
 var n4;
 var database1 = firebase.database();
-var rootRef = database1.ref('USER/user1/LOGS/');
+var username=document.getElementById("hidenode").value;
+var rootRef = database1.ref('USER/'+username+'/LOGS/');
 var rootRef1;
 rootRef.on('value', gotData, errData);
 
@@ -43,7 +44,7 @@ function gotData(data) {
 }
 
 function after(clicked_id) {
-	rootRef1 = database1.ref('USER/user1/LOGS/' + clicked_id);
+	rootRef1 = database1.ref('USER/'+username+'/LOGS/' + clicked_id);
 	rootRef1.on('value', gotData1, errData1);
 	function gotData1(data) {
 		resetTable();
@@ -70,7 +71,7 @@ function after(clicked_id) {
 }
 function init(keys) {
 
-	rootRef1 = database1.ref('USER/user1/LOGS/' + keys[keys.length-1]);
+	rootRef1 = database1.ref('USER/'+username+'/LOGS/' + keys[keys.length-1]);
 	rootRef1.on('value', gotData1, errData1);
 	function gotData1(data) {
 		resetTable();

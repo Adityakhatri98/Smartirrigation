@@ -13,8 +13,8 @@ firebase.initializeApp(firebaseConfig);
 var nodedata = [];
 function show() {
 	database = firebase.database();
-	
-	var reff = database.ref('USER/user1/node_data/allnodedata');
+	var username=document.getElementById("hidenode").value;
+	var reff = database.ref('USER/'+username+'/node_data/allnodedata');
 	reff.on('value', gotData, errData);
 
 	function gotData(data) {
@@ -33,10 +33,6 @@ function show() {
 	}
 }
 
-function reload_page() {
-	window.location.reload();
-	show();
-}
 var nodedatadisp = [];
 function cssVar() {
 	var alpha = 1000;

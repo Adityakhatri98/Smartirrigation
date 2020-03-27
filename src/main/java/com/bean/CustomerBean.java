@@ -110,7 +110,9 @@ public class CustomerBean {
 
 	@Override
 	public String toString() {
-		return "CustomerBean [name=" + name + ", email=" + email + ", pwd=" + pwd + ", pincode=" + pincode
-				+ ", address=" + address + ", phone=" + phone + "]";
+		return "CustomerBean [name=" + name + ", id=" + id + ", email=" + email + ", pwd=" + pwd + ", pincode="
+				+ pincode + ", address=" + address + ", phone=" + phone + ", node=" + node + ", auth=" + auth + "]";
 	}
+
+	
 }

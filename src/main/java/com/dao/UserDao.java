@@ -89,7 +89,6 @@ public class UserDao {
 		if (bean.isEmpty()) {
 			return null;
 		} else {
-			System.out.println("Dao : " + bean);
 			return bean.get(0);
 		}
 	}
@@ -99,7 +98,6 @@ public class UserDao {
 		String query = "SELECT * FROM user_signup WHERE user_email = '" + email + "'";
 		List<CustomerBean> user = stmt.query(query, new UserMapper());
 		return user.get(0);
-
 	}
 
 	public int updateUser(CustomerBean bean) {
