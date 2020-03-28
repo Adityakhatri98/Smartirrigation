@@ -24,7 +24,7 @@
 <script
 	src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
 
-<script src="js/profile.js"></script>
+
 
 </head>
 <body>
@@ -61,12 +61,18 @@
 			</label></span>
 		</div>
 		<div class="cont">
-			<b>MasterReset</b></span> <span class="toogle"><label
+			<b>Moter on/off</b><span class="toogle"><label class="switch">
+					<input type="checkbox" id="moter"><span
+					class="slider round"></span>
+			</label></span>
+		</div>
+		<div class="cont">
+			<b>SystemReset</b></span> <span class="toogle"><label
 				class="switch"> <input type="checkbox" id="mreset" ><span
 					class="slider round"></span></label></span>
 		</div>
 		<div class="cont">
-			<b>SlaveReset</b></span> <span class="toogle"><label
+			<b>FieldReset</b></span> <span class="toogle"><label
 				class="switch"> <input type="checkbox" id="sreset" ><span
 					class="slider round"></span></label></span>
 		</div>
@@ -86,6 +92,7 @@
 	<br/>
 </div>	
 	<script src="../js/jquery.min.js"></script>
+	<script src="js/profile.js"></script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 

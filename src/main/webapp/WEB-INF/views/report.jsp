@@ -43,10 +43,6 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<%
-		CustomerBean report = (CustomerBean) (session.getAttribute("user"));
-	%>
-	<input type="hidden" id="hidenode" value="<%=report.getNode()%>"/>
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -58,12 +54,13 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2"
 							id="mySelect"></div>
 					</div>
-			<!-- 		<div class="input-field col s12" id="DropList1">
+					<!-- 		<div class="input-field col s12" id="DropList1">
 						<select id="mySelect1">
 							<option value="" id="dropdownMenu" disabled selected>Choose your option</option>
 						</select> <label>Date : </label>
 					</div>
-			 -->		<table id="tid">
+			 -->
+					<table id="tid">
 						<thead>
 							<tr class="table100-head">
 								<td>Date</td>

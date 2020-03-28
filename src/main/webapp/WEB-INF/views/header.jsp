@@ -48,6 +48,10 @@
 <!-- ftco-navbar -->
 </head>
 <body>
+	<%
+		CustomerBean report = (CustomerBean) (session.getAttribute("user"));
+		if (report == null) {
+	%>
 	<nav
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
@@ -68,7 +72,7 @@
 				<ul class="navbar-nav ml-auto">
 					<%
 						CustomerBean temp = (CustomerBean) (session.getAttribute("user"));
-						if (temp == null) {
+							if (temp == null) {
 					%>
 					<li class="nav-item"><a href="#Home" class="nav-link"
 						style="font-family: Poppins-Regular;">Home</a></li>
@@ -101,5 +105,65 @@
 			</div>
 		</div>
 	</nav>
+	<%
+		} else {
+	%>
+	<input type="hidden" id="hidenode" value="<%=report.getNode()%>" />
+		<nav
+		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+		id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand"
+				href="${pageContext.request.contextPath}/index"
+				style="font-family: Poppins-Regular;"> <i
+				class="fas fa-seedling" style="font-size: 30px;"></i><span
+				style="font-family: Poppins-Regular;">Smart</span>Crop
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav"
+				aria-expanded="false" aria-label="Toggle navigation"
+				style="font-family: Poppins-Regular;">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<%
+						CustomerBean temp = (CustomerBean) (session.getAttribute("user"));
+							if (temp == null) {
+					%>
+					<li class="nav-item"><a href="#Home" class="nav-link"
+						style="font-family: Poppins-Regular;">Home</a></li>
+					<li class="nav-item"><a href="#service" class="nav-link"
+						style="font-family: Poppins-Regular;">Services</a></li>
+					<li class="nav-item"><a href="#About" class="nav-link"
+						style="font-family: Poppins-Regular;">About</a></li>
+					<li class="nav-item"><a
+						href="${pageContext.request.contextPath}/login" class="nav-link"
+						style="font-family: Poppins-Regular;">Login</a></li>
+					<%
+						} else {
+					%>
+					<li class="nav-item"><a
+						href="${pageContext.request.contextPath}/bar" class="nav-link"
+						style="font-family: Poppins-Regular;">Monitor</a></li>
+					<li class="nav-item"><a
+						href="${pageContext.request.contextPath}/report" class="nav-link"
+						style="font-family: Poppins-Regular;">Logs</a></li>
+					<li class="nav-item"><a
+						href="${pageContext.request.contextPath}/profile" class="nav-link"
+						style="font-family: Poppins-Regular;">Profile</a></li>
+					<li class="nav-item"><a
+						href="${pageContext.request.contextPath}/logout" class="nav-link"
+						style="font-family: Poppins-Regular;">Logout</a></li>
+					<%
+						}
+					%>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<%
+		}
+	%>
 </body>
 </html>
